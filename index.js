@@ -34,10 +34,10 @@ app.get("/movies/list", (req, res) => {
   return res.status(200).send(movieList);
 });
 
-app.delete("/movie/delete", (req, res) => {
+app.delete("/movie/delete/", (req, res) => {
   //   extract movie name from req.body
   const movieNameToBeDeleted = req.body.name;
-
+  console.log(req.body.name)
   //   find movie with provided name on  movie list
   const requiredMovie = movieList.find((item) => {
     if (item.name === movieNameToBeDeleted) {
